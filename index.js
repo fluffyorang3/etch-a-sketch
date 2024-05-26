@@ -2,10 +2,10 @@ let containerDiv = document.querySelector(".grid")
 
 
 function createSquares(widthSegments , heightSegments) {
-  
+  let divCreate;
   console.log(widthSegments, heightSegments);
   for(i = 0; i < widthSegments * heightSegments; i++) {
-    let divCreate = document.createElement("div");
+    divCreate = document.createElement("div");
     divCreate.classList.add("blocks");
     if(widthSegments == 16 && heightSegments == 16) {
       divCreate.setAttribute("style", "border-style: solid; border-width: 0.5px; width: 20px; height: 20px;")
@@ -14,7 +14,6 @@ function createSquares(widthSegments , heightSegments) {
     } else {
       divCreate.setAttribute("style", "border-style: solid; border-width: 0.5px; width: 10px; height: 10px;")
     }
-    
     containerDiv.appendChild(divCreate);
   }
 }
@@ -32,7 +31,7 @@ btn1.addEventListener("click", () => {
   widthSegments = 16;
   heightSegments = 16;
   createSquares(widthSegments, heightSegments);
-  theGrid.setAttribute("style", "grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(16), 1fr;")
+  theGrid.setAttribute("style", "grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(16, 1fr);")
 })
 
 btn2.addEventListener("click", () => {
@@ -40,7 +39,7 @@ btn2.addEventListener("click", () => {
   widthSegments = 32;
   heightSegments = 32;
   createSquares(widthSegments, heightSegments);
-  theGrid.setAttribute("style", "grid-template-columns: repeat(32, 1fr); grid-template-rows: repeat(32), 1fr;")
+  theGrid.setAttribute("style", "grid-template-columns: repeat(32, 1fr); grid-template-rows: repeat(32, 1fr);")
 })
 
 btn3.addEventListener("click", () => {
@@ -48,11 +47,13 @@ btn3.addEventListener("click", () => {
   widthSegments = 64;
   heightSegments = 64;
   createSquares(widthSegments, heightSegments);
-  theGrid.setAttribute("style", "grid-template-columns: repeat(64, 1fr); grid-template-rows: repeat(64), 1fr;")
+  theGrid.setAttribute("style", "grid-template-columns: repeat(64, 1fr); grid-template-rows: repeat(64, 1fr);")
 })
 
 btnReset.addEventListener("click", () => {
   containerDiv.replaceChildren();
 })
+
+
 
 
